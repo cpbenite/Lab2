@@ -32,19 +32,19 @@ def template_route2(req):
 def main() :
     with Configurator() as config:
         # Linda Route
-        config.add_route('linda', '/')
+        config.add_route('linda', '/linda')
         config.add_view(linda_route, route_name='linda')
 
         # Zoe Route
-        config.add_route('zoe', '/')
+        config.add_route('zoe', '/zoe')
         config.add_view(zoe_route, route_name='zoe')
 
         # Emily Route
-        config.add_route('emily', '/')
+        config.add_route('emily', '/emily')
         config.add_view(emily_route, route_name='emily')
 
         # Martha Route
-        config.add_route('martha', '/')
+        config.add_route('martha', '/martha')
         config.add_view(martha_route, route_name='martha')
 
         # add static folder to search path
@@ -68,7 +68,7 @@ def main() :
 
     # run the server
     server = make_server('127.0.0.2', 8080, app)
-    print("The server is now running on: http://127.0.0.1:8080")
+    print("The server is now running on: http://127.0.0.2:8080")
     
     try:
         server.serve_forever()
