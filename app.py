@@ -33,19 +33,19 @@ def main() :
     with Configurator() as config:
         # Linda Route
         config.add_route('linda', '/')
-        config.add_view(linda_route, route_name='Linda')
+        config.add_view(linda_route, route_name='linda')
 
         # Zoe Route
         config.add_route('zoe', '/')
-        config.add_view(zoe_route, route_name='Zoe')
+        config.add_view(zoe_route, route_name='zoe')
 
         # Emily Route
         config.add_route('emily', '/')
-        config.add_view(emily_route, route_name='Emily')
+        config.add_view(emily_route, route_name='emily')
 
         # Martha Route
         config.add_route('martha', '/')
-        config.add_view(martha_route, route_name='Martha')
+        config.add_view(martha_route, route_name='martha')
 
         # add static folder to search path
         config.add_static_view(name='/', path='./public', cache_max_age=3600)
