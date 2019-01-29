@@ -19,8 +19,8 @@ def martha_route(req):
     return FileResponse('Martha.html')
 
 def zoe_template_route(req):
-  data = {'count': 1, 'files': ['Zoe.html']}
-  return render_to_response('template.html', data, request=req)
+    data = {'count': 1, 'files': ['Zoe.html']}
+    return render_to_response('template.html', data, request=req)
 
 '''
 def template_route(req):
@@ -64,6 +64,7 @@ def main() :
 
         config.add_route('zoe_template', '/zoe_template')
         config.add_view(zoe_template_route, route_name='zoe_template')
+
     '''
         config.add_route('template_example2', '/template2')
         config.add_view(template_route2, route_name='template_example2')
