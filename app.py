@@ -21,6 +21,19 @@ def martha_route(req):
 def zoe_template_route(req):
     data = {'count': 1, 'files': ['Zoe.html']}
     return render_to_response('template.html', data, request=req)
+
+def linda_template_route(req):
+    data = {'count': 1, 'files': ['Linda_template.html']}
+    return render_to_response('template.html', data, request=req)
+
+def emily_template_route(req):
+    data = {'count': 1, 'files': ['Emily_template.html']}
+    return render_to_response('template.html', data, request=req)
+
+def martha_template_route(req):
+    data = {'count': 1, 'files': ['Martha_template.html']}
+    return render_to_response('template.html', data, request=req)
+
 '''
 def zoe_template_route(req):
     data = {'message': 'Zoe!'}
@@ -62,6 +75,15 @@ def main() :
 
         config.add_route('zoe_template', '/zoe_template')
         config.add_view(zoe_template_route, route_name='zoe_template')
+
+        config.add_route('linda_template', '/linda_template')
+        config.add_view(linda_template_route, route_name='linda_template')
+
+        config.add_route('martha_template', '/martha_template')
+        config.add_view(martha_template_route, route_name='martha_template')
+
+        config.add_route('emily_template', '/emily_template')
+        config.add_view(emily_template_route, route_name='emily_template')
 
         # add static folder to search path
         config.add_static_view(name='/', path='./public', cache_max_age=3600)
