@@ -47,6 +47,12 @@ def main() :
         config.add_route('martha', '/')
         config.add_view(martha_route, route_name='Martha')
 
+        # add static folder to search path
+        config.add_static_view(name='/', path='./public', cache_max_age=3600)
+
+        # create the webserver config
+        app = config.make_wsgi_app()
+
     '''
         # for template_route / template_route2
         config.include('pyramid_jinja2')
@@ -58,11 +64,7 @@ def main() :
         config.add_route('template_example2', '/template2')
         config.add_view(template_route2, route_name='template_example2')
     '''
-        # add static folder to search path
-        config.add_static_view(name='/', path='./public', cache_max_age=3600)
-
-        # create the webserver config
-        app = config.make_wsgi_app()
+        
 
     # run the server
     server = make_server('127.0.0.2', 8080, app)
