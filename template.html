@@ -10,10 +10,13 @@
   </head>
 
   <body>
-    {{ message }} Everything beneath me was generated at runtime!
-
-    {% block child_block %}
-    {% endblock %}
+    <p>Welcome to my Template</p>
+    Count: {{ count }} 
+    {% for file_name in files %}
+      {% if count == 1 %}
+        {% include file_name %}
+      {% endif %}
+    {% endfor %}
   </body>
 
 </html>
