@@ -18,7 +18,7 @@ def emily_route(req):
 def martha_route(req):
     return FileResponse('Martha.html')
 
-def zoe_temlate_route(req):
+def zoe_template_route(req):
   data = {'message': 'Greetings!'}
   return render_to_response('Zoe_template.html', data, request=req)
 
