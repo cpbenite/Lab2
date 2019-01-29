@@ -51,6 +51,13 @@ def main() :
         config.add_route('martha', '/martha')
         config.add_view(martha_route, route_name='martha')
 
+        # for template_route / template_route2
+        config.include('pyramid_jinja2')
+        config.add_jinja2_renderer('.html')
+
+        config.add_route('zoe_template', '/zoe_template')
+        config.add_view(zoe_template_route, route_name='zoe_template')
+
         # add static folder to search path
         config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
@@ -58,12 +65,7 @@ def main() :
         app = config.make_wsgi_app()
 
     
-        # for template_route / template_route2
-        config.include('pyramid_jinja2')
-        config.add_jinja2_renderer('.html')
-
-        config.add_route('zoe_template', '/zoe_template')
-        config.add_view(zoe_template_route, route_name='zoe_template')
+        
 
     '''
         config.add_route('template_example2', '/template2')
