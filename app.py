@@ -18,6 +18,10 @@ def emily_route(req):
 def martha_route(req):
     return FileResponse('Martha.html')
 
+def zoe_temlate_route(req):
+  data = {'message': 'Greetings!'}
+  return render_to_response('Zoe_template.html', data, request=req)
+
 '''
 def template_route(req):
   data = {'message': 'Greetings!'}
@@ -53,14 +57,14 @@ def main() :
         # create the webserver config
         app = config.make_wsgi_app()
 
-    '''
+    
         # for template_route / template_route2
         config.include('pyramid_jinja2')
         config.add_jinja2_renderer('.html')
 
-        config.add_route('template_example', '/template')
-        config.add_view(template_route, route_name='template_example')
-
+        config.add_route('zoe_template', '/zoe_template')
+        config.add_view(zoe_template_route, route_name='zoe_template')
+    '''
         config.add_route('template_example2', '/template2')
         config.add_view(template_route2, route_name='template_example2')
     '''
