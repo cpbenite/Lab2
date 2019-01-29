@@ -17,8 +17,8 @@ def emily_route(req):
 
 def martha_route(req):
     return FileResponse('Martha.html')
-'''
-def zoe_template_route2(req):
+
+def zoe_template_route(req):
     data = {'count': 1, 'files': ['Zoe.html']}
     return render_to_response('template.html', data, request=req)
 '''
@@ -26,6 +26,7 @@ def zoe_template_route(req):
     data = {'message': 'Zoe!'}
     return render_to_response('Zoe_template.html', data, request=req)
 
+'''
 '''
 def template_route(req):
   data = {'message': 'Greetings!'}
