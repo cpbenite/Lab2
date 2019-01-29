@@ -23,15 +23,15 @@ def zoe_template_route(req):
     return render_to_response('template.html', data, request=req)
 
 def linda_template_route(req):
-    data = {'count': 1, 'files': ['Linda_template.html']}
+    data = {'count': 1, 'files': ['Linda.html']}
     return render_to_response('template.html', data, request=req)
 
 def emily_template_route(req):
-    data = {'count': 1, 'files': ['Emily_template.html']}
+    data = {'count': 1, 'files': ['Emily.html']}
     return render_to_response('template.html', data, request=req)
 
 def martha_template_route(req):
-    data = {'count': 1, 'files': ['Martha_template.html']}
+    data = {'count': 1, 'files': ['Martha.html']}
     return render_to_response('template.html', data, request=req)
 
 '''
