@@ -24,7 +24,7 @@ def zoe_template_route2(req):
 '''
 def zoe_template_route(req):
     data = {'message': 'Zoe!'}
-    return render_to_response('Zoe_template.html')
+    return render_to_response('Zoe_template.html', data, request=req)
 
 '''
 def template_route(req):
