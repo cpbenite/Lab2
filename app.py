@@ -24,19 +24,19 @@ def martha_route(req):
 ''' Routes using Jinja templating '''
 
 def linda_template_route2(req):
-    data = {'message': 'Greetings!'}
+    data = {'message': 'Linda!'}
     return render_to_response('Linda_template.html', data, request=req)
 
 def emily_template_route2(req):
-    data = {'message': 'Greetings!'}
+    data = {'message': 'Emily!'}
     return render_to_response('Emily_template.html', data, request=req)
 
 def martha_template_route2(req):
-    data = {'message': 'Greetings!'}
+    data = {'message': 'Martha!'}
     return render_to_response('Martha_template.html', data, request=req)
 
 def zoe_template_route2(req):
-    data = {'message': 'Greetings!'}
+    data = {'message': 'Zoe!'}
     return render_to_response('Zoe_template.html', data, request=req)
 
 '''
@@ -98,7 +98,7 @@ def main() :
         config.add_view(emily_template_route2, route_name='emily_template2')
 
         # add static folder to search path
-        config.add_static_view(name='/', path='./public', cache_max_age=3600)
+        config.add_static_view(name='/', path='./', cache_max_age=3600)
 
         # create the webserver config
         app = config.make_wsgi_app()
