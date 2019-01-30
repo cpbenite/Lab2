@@ -6,6 +6,9 @@ from pyramid.response import FileResponse
 from pyramid.renderers import render_to_response
 
 ''' Routes '''
+def home_route(req):
+    return FileResponse('home.html')
+
 def linda_route(req):
     return FileResponse('Linda.html')
 
@@ -56,6 +59,10 @@ def zoe_template_route2(req):
 ''' Main Application '''
 def main() :
     with Configurator() as config:
+        # Home Route
+        config.add_route('home', '/home')
+        config.add_view(home_route, route_name='home')
+        
         # Linda Route
         config.add_route('linda', '/linda')
         config.add_view(linda_route, route_name='linda')
