@@ -23,7 +23,7 @@ def zoe_template_route(req):
     return render_to_response('template.html', data, request=req)
 
 def linda_template_route(req):
-    data = {'count': 1, 'files': ['Linda.html']}
+    data = {'count': 1, 'files': ['Linda_template.html']}
     return render_to_response('template.html', data, request=req)
 
 def emily_template_route(req):
