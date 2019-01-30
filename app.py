@@ -40,15 +40,6 @@ def zoe_template_route(req):
     return render_to_response('Zoe_template.html', data, request=req)
 
 '''
-'''
-def template_route(req):
-  data = {'message': 'Greetings!'}
-  return render_to_response('index2.html', data, request=req)
-
-def template_route2(req):
-  data = {'count': 1, 'files': ['msg1.html', 'msg2.html', 'msg3.html']}
-  return render_to_response('index3.html', data, request=req)
-'''
 
 ''' Main Application '''
 def main() :
@@ -90,15 +81,6 @@ def main() :
 
         # create the webserver config
         app = config.make_wsgi_app()
-
-    
-        
-
-    '''
-        config.add_route('template_example2', '/template2')
-        config.add_view(template_route2, route_name='template_example2')
-    '''
-        
 
     # run the server
     server = make_server('127.0.0.2', 8080, app)
