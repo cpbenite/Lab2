@@ -5,7 +5,7 @@ from pyramid.response import Response
 from pyramid.response import FileResponse
 from pyramid.renderers import render_to_response
 
-''' Routes '''
+''' Basic Routes '''
 def home_route(req):
     return FileResponse('home.html')
 
@@ -20,6 +20,24 @@ def emily_route(req):
 
 def martha_route(req):
     return FileResponse('Martha.html')
+
+''' Routes using Jinja templating '''
+
+def linda_template_route2(req):
+    data = {'message': 'Greetings!'}
+    return render_to_response('Linda_template.html', data, request=req)
+
+def emily_template_route2(req):
+    data = {'message': 'Greetings!'}
+    return render_to_response('Emily_template.html', data, request=req)
+
+def martha_template_route2(req):
+    data = {'message': 'Greetings!'}
+    return render_to_response('Martha_template.html', data, request=req)
+
+def zoe_template_route2(req):
+    data = {'message': 'Greetings!'}
+    return render_to_response('Zoe_template.html', data, request=req)
 
 '''
 def zoe_template_route(req):
@@ -38,22 +56,6 @@ def martha_template_route(req):
     data = {'count': 1, 'files': ['Martha.html']}
     return render_to_response('template.html', data, request=req)
 '''
-
-def linda_template_route2(req):
-    data = {'message': 'Greetings!'}
-    return render_to_response('Linda_template.html', data, request=req)
-
-def emily_template_route2(req):
-    data = {'message': 'Greetings!'}
-    return render_to_response('Emily_template.html', data, request=req)
-
-def martha_template_route2(req):
-    data = {'message': 'Greetings!'}
-    return render_to_response('Martha_template.html', data, request=req)
-
-def zoe_template_route2(req):
-    data = {'message': 'Greetings!'}
-    return render_to_response('Zoe_template.html', data, request=req)
 
 
 ''' Main Application '''
@@ -79,7 +81,7 @@ def main() :
         config.add_route('martha', '/martha')
         config.add_view(martha_route, route_name='martha')
 
-        # for template_route / template_route2
+        # Jinja Routes
         config.include('pyramid_jinja2')
         config.add_jinja2_renderer('.html')
 
