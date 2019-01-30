@@ -88,6 +88,12 @@ def main() :
         config.add_route('emily_template2', '/emily_template2')
         config.add_view(emily_template_route2, route_name='emily_template2')
 
+        # add static folder to search path
+        config.add_static_view(name='/', path='./public', cache_max_age=3600)
+
+        # create the webserver config
+        app = config.make_wsgi_app()
+
     '''
         config.add_route('zoe_template', '/zoe_template')
         config.add_view(zoe_template_route, route_name='zoe_template')
@@ -98,12 +104,8 @@ def main() :
         config.add_route('emily_template', '/emily_template')
         config.add_view(emily_template_route, route_name='emily_template')
     '''
-    
-        # add static folder to search path
-        config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
-        # create the webserver config
-        app = config.make_wsgi_app()
+        
 
     # run the server
     server = make_server('127.0.0.2', 8080, app)
