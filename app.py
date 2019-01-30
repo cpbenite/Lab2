@@ -8,7 +8,7 @@ from pyramid.renderers import render_to_response
 ''' Basic Routes '''
 def home_route(req):
     return FileResponse('home.html')
-
+'''
 def linda_route(req):
     return FileResponse('Linda.html')
 
@@ -20,7 +20,7 @@ def emily_route(req):
 
 def martha_route(req):
     return FileResponse('Martha.html')
-
+'''
 ''' Routes using Jinja templating '''
 
 def linda_template_route2(req):
@@ -64,22 +64,6 @@ def main() :
         # Home Route
         config.add_route('home', '/')
         config.add_view(home_route, route_name='home')
-        
-        # Linda Route
-        config.add_route('linda', '/linda')
-        config.add_view(linda_route, route_name='linda')
-
-        # Zoe Route
-        config.add_route('zoe', '/zoe')
-        config.add_view(zoe_route, route_name='zoe')
-
-        # Emily Route
-        config.add_route('emily', '/emily')
-        config.add_view(emily_route, route_name='emily')
-
-        # Martha Route
-        config.add_route('martha', '/martha')
-        config.add_view(martha_route, route_name='martha')
 
         # Jinja Routes
         config.include('pyramid_jinja2')
@@ -104,6 +88,22 @@ def main() :
         app = config.make_wsgi_app()
 
     '''
+        # Linda Route
+        config.add_route('linda', '/linda')
+        config.add_view(linda_route, route_name='linda')
+
+        # Zoe Route
+        config.add_route('zoe', '/zoe')
+        config.add_view(zoe_route, route_name='zoe')
+
+        # Emily Route
+        config.add_route('emily', '/emily')
+        config.add_view(emily_route, route_name='emily')
+
+        # Martha Route
+        config.add_route('martha', '/martha')
+        config.add_view(martha_route, route_name='martha')
+
         config.add_route('zoe_template', '/zoe_template')
         config.add_view(zoe_template_route, route_name='zoe_template')
 
@@ -113,8 +113,6 @@ def main() :
         config.add_route('emily_template', '/emily_template')
         config.add_view(emily_template_route, route_name='emily_template')
     '''
-
-        
 
     # run the server
     server = make_server('127.0.0.2', 8080, app)
