@@ -62,7 +62,7 @@ def martha_template_route(req):
 def main() :
     with Configurator() as config:
         # Home Route
-        config.add_route('home', '/home')
+        config.add_route('home', '/')
         config.add_view(home_route, route_name='home')
         
         # Linda Route
