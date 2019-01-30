@@ -6,11 +6,10 @@
     <title>ECE 140A Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link href="css/styles.css" rel="stylesheet">
+    <link href=".css/styles.css" rel="stylesheet">
   </head>
 
   <body>
-    <p>Welcome to my Template</p>
     {% for file_name in files %}
       {% if count == 1 %}
         {% include file_name %}
