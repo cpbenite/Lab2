@@ -18,6 +18,10 @@ def emily_route(req):
 def martha_route(req):
     return FileResponse('Martha.html')
 
+def linda_template_route2(req):
+    data = {'message': 'Greetings!'}
+    return render_to_response('Linda_template.html', data, request=req)
+
 def zoe_template_route(req):
     data = {'count': 1, 'files': ['Zoe.html']}
     return render_to_response('template.html', data, request=req)
@@ -75,6 +79,9 @@ def main() :
 
         config.add_route('emily_template', '/emily_template')
         config.add_view(emily_template_route, route_name='emily_template')
+
+        config.add_route('zoe_template2', '/zoe_template2')
+        config.add_view(zoe_template_route2, route_name='zoe_template2')
 
         # add static folder to search path
         config.add_static_view(name='/', path='./public', cache_max_age=3600)
